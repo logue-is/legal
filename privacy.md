@@ -1,13 +1,13 @@
 ---
 title: Privacy Policy
-updated: 2026-10-12
+updated: 2026-11-23
 ---
 
 ## Summary
 
 - Logue is built on the AT Protocol. What you publish (logues, posts, follows, your profile) is stored in **your own account** on your Personal Data Server (PDS) and is **public to everyone** on the network, not only on Logue, unless you publish it in a non-public space (section 5).
-- We keep an index of that public data so Logue can show it quickly. Privately, we keep only what we need to sign you in: your email address and your login session.
-- We do not track you. We measure how Logue is used only on our own servers, without cookies or scripts in your browser, and only in aggregate. If we show ads, they will be based on what you are reading, not on a profile of you. We do not sell your data.
+- We keep an index of that public data so Logue can show it quickly. Privately, we keep only what we need to sign you in (your email address and your login session) and to send the email subscriptions you ask for, which you can also use without an account.
+- We do not track you. We measure how Logue is used only on our own servers, without analytics cookies or scripts in your browser, and only in aggregate. If we show ads, they will be based on what you are reading, not on a profile of you. We do not sell your data.
 - If you are signed in, we suggest logues on the Explore page based on what you publicly follow and like. You can turn this off at any time.
 
 ## 1. Data controller
@@ -33,12 +33,22 @@ Deleting a record on Logue deletes it from your PDS, and well-behaved apps will 
 ### Registered users
 
 - **Account identity**: your DID, handle, and the profile you set up on Logue (display name, avatar, bio, pronouns, website). On your first sign-in we copy your Bluesky profile as a starting point. Needed to run your account (performance of contract).
-- **Email address**: read from your account provider when you sign in. We use it to contact you about your account or important changes, such as updates to this policy, and to deliver email subscriptions you turn on. We never use it for marketing without asking and never share it. Kept privately in our database (performance of contract and legitimate interest).
-- **Email subscriptions**: if you choose “Subscribe by email” on a logue, we send its new posts to your verified email address. We store which logues you subscribed to privately, not in your public account. Publishers see only how many people subscribed, never who or their email addresses. Every email has a one-click unsubscribe link, and our emails contain no tracking pixels or tracked links (performance of contract).
+- **Email address**: read from your account provider when you sign in, or entered by you if your provider does not share one. We use it to contact you about your account or important changes, such as updates to this policy, and to deliver email subscriptions you turn on. You can also add up to 10 more addresses for email subscriptions, each confirmed with a code. We never use your addresses for marketing without asking and never share them. Kept privately in our database (performance of contract and legitimate interest).
 - **Login session**: the OAuth tokens your account provider issues to Logue so we can publish on your behalf. Deleted when you log out (performance of contract).
 - **Your public content**: logues, posts, images, follows, and co-logger relationships, as described in section 4.
 - **Your non-public content**: content in spaces you own or belong to, and their member lists, as described in section 5 (performance of contract).
 - **Recommendations**: to suggest logues on the Explore page, we use your public follows, likes, reposts, and similar public interactions on Logue and other AT Protocol apps, together with what people with similar follows read. We do not label you with interests or sensitive traits (such as health, religion, politics, or sexuality), and we never use non-public content to recommend anything to other people. You can turn personalised recommendations off in your settings; Explore then shows popular and new logues instead, and we delete the recommendation data we keep about you (legitimate interest in showing you relevant logues).
+
+### Email subscribers
+
+You can subscribe to a logue by email whether or not you have an account. These rules apply either way:
+
+- **What we store**: your email address, which logues it is subscribed to, and when you confirmed it. This is kept privately, never in a public account. Publishers see only how many people subscribed, never who or their email addresses (performance of contract).
+- **Confirming your address**: before we send anything else, we email you a 6-digit code to confirm the address is yours. The code expires after 10 minutes, and we store only a one-way hash of it. An address that is never confirmed receives nothing but the codes requested for it (performance of contract).
+- **Bot check**: when you open the email subscription dialog, it runs Cloudflare Turnstile, so bots cannot use the form to send codes to other people's addresses. Turnstile loads a Cloudflare script in your browser that checks technical signals from your browser and device, such as how it renders and responds, to tell people from bots. Usually it runs unseen; sometimes it asks you to tick a box. It runs only in this dialog, and Cloudflare does not use it to track you across sites or for advertising (legitimate interest in preventing abuse of the form).
+- **Abuse limits**: to limit how many codes can be requested or entered, we count requests per email address and per IP address for up to an hour. The counters are stored under a one-way hash of the address, not the address itself, and our logs of these requests contain neither your email address nor your IP address (legitimate interest in preventing abuse).
+- **The emails**: when a logue you subscribed to publishes a public post, we email it to you. Every email has links to unsubscribe from that logue or from all logues, which work without signing in, and supports your email app's one-click unsubscribe button. Unsubscribing deletes the subscription. Our emails contain no tracking pixels or tracked links: images are loaded like on any web page, from our servers, Bluesky's image CDN, or, for an embedded video, the video's service (such as YouTube), at the same address for every reader, so we cannot tell who opened an email.
+- **If you have an account**: you can also subscribe and unsubscribe in the logue's subscribe menu. If you later confirm, from your account, an address you subscribed with while signed out, those subscriptions join your account so you can manage them there.
 
 ### Authors of public content on the network
 
@@ -80,7 +90,7 @@ Some content on Logue, such as members-only logues and private follows, is store
 - **theme**: your light or dark mode choice, stored in your browser's local storage. It never leaves your device.
 - **Security cookies**: Cloudflare, which protects Logue against attacks and abuse, may set short-lived cookies such as `__cf_bm` or `cf_clearance` to tell people apart from bots. They are strictly necessary and are not used for tracking.
 
-We do not use analytics, advertising, or tracking cookies, and nothing else is stored on your device.
+We do not use analytics, advertising, or tracking cookies. Apart from the above, and the Cloudflare bot check that runs only when you subscribe by email (section 3), nothing is stored on or read from your device.
 
 ## 7. Analytics
 
@@ -112,7 +122,7 @@ We do not sell or rent personal data. Some data reaches the following parties so
 
 - **Your account provider (PDS)**: receives what you publish and the images you upload, and handles sign-in.
 - **Bluesky Social PBC** (USA): some images may be served through Bluesky's image CDN; handle suggestions while typing a mention query Bluesky's public API; some link previews are fetched through Bluesky's preview service.
-- **Cloudflare, Inc.** (USA): all traffic to Logue passes through Cloudflare, which delivers the site and images from servers near you and protects it against attacks. It therefore processes your IP address and request details on our behalf, and provides us with aggregate traffic statistics.
+- **Cloudflare, Inc.** (USA): all traffic to Logue passes through Cloudflare, which delivers the site and images from servers near you and protects it against attacks. It therefore processes your IP address and request details on our behalf, and provides us with aggregate traffic statistics. When you subscribe by email, it also runs the bot check described in section 3.
 - **Hetzner Online GmbH** (Germany): hosts the servers, databases, and image caches that store the data described above.
 - **Our email delivery provider**: sends the emails described above, and receives your email address and the content of each email for that purpose only.
 - **Embedded content**: when a post embeds content from YouTube (privacy-enhanced mode), X, Instagram, Reddit, Bluesky, or Bandcamp, your browser loads it directly from that service when you view the post. That service receives your IP address and may set its own cookies under its own privacy policy.
@@ -127,6 +137,7 @@ Some of these services are outside the European Economic Area. Where that applie
 - Cached images: until the cache expires or the image is deleted.
 - Recommendation data: while personalised recommendations are on; deleted when you turn them off. Interactions removed from the network are deleted from our index.
 - Email subscriptions: until you unsubscribe, after which we delete them.
+- Email verification codes: 10 minutes, stored only as a one-way hash. Abuse limit counters: up to an hour.
 - Login session: until you log out or the session expires.
 - Technical logs: only as long as needed for security and debugging.
 - Analytics: visit hashes until 8 hours after your last page view, with the daily secret deleted every day; anonymous totals indefinitely.
@@ -134,7 +145,7 @@ Some of these services are outside the European Economic Area. Where that applie
 
 ## 11. Your rights
 
-Under the GDPR you have the right to access, correct, delete, restrict, and port your personal data, and to object to processing based on legitimate interest. You can stop personalised recommendations yourself in your settings. To use these rights, email [logue@lefelys.com](mailto:logue@lefelys.com) from the address on your account. We reply within one month.
+Under the GDPR you have the right to access, correct, delete, restrict, and port your personal data, and to object to processing based on legitimate interest. You can stop personalised recommendations yourself in your settings. To use these rights, email [logue@lefelys.com](mailto:logue@lefelys.com) from the address on your account, or, if you subscribed by email without an account, from the subscribed address. We reply within one month.
 
 Content in your PDS is yours to edit or delete directly, in Logue or any compatible app. To remove your Logue account and our copy of your data, email us. Your Atmosphere account and data in other apps are not affected. If you keep publishing in Logue's formats, our index will pick it up again, because it is public.
 
@@ -150,4 +161,4 @@ Connections to Logue are encrypted (HTTPS), the session cookie is encrypted, and
 
 ## 14. Changes to this policy
 
-We will post updates on this page and change the date above. If a change is significant, we will give notice on Logue or by email before it takes effect.
+We will post updates on this page and change the date above. If a change is significant, we will give notice on Logue or by email before it takes effect. Every change is also announced in [Logue Legal](https://logue.is/~logue-legal-updates), which you can follow or subscribe to by email.

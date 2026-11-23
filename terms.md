@@ -1,6 +1,6 @@
 ---
 title: Terms of Service
-updated: 2026-10-12
+updated: 2026-11-23
 ---
 
 ## 1. Scope
@@ -15,6 +15,8 @@ These terms cover only the service we run. They do not cover your account provid
 - You sign in with an existing AT Protocol (Atmosphere) account. That account is provided by your account provider under its own terms. You can revoke Logue's access at any time by logging out or through your provider.
 - You are responsible for what happens under your account and for keeping your account provider login secure.
 - If you publish for an organisation, you confirm you are allowed to act for it.
+
+You do not need an account to read Logue or to subscribe to a logue by email. If you subscribe by email, use only an address you control. You can unsubscribe at any time with the link in each email.
 
 ## 3. Public and non-public content
 
@@ -41,6 +43,7 @@ You agree not to use Logue to:
 - impersonate people or organisations, or mislead readers about who is behind a logue;
 - publish other people's private information, including content from non-public spaces, without consent;
 - send spam, run scams, or spread malware;
+- subscribe email addresses that are not yours, or use our email forms to send messages to other people;
 - overload, probe, or bypass the security or rate limits of Logue, or scrape it in a way that harms the service;
 - help anyone else do any of the above.
 
@@ -83,7 +86,7 @@ You can stop using Logue at any time, and ask us to delete your Logue account as
 
 ## 12. Changes to these terms
 
-We may update these terms. We will post the new version here with a new date and, for significant changes, give at least 14 days' notice on Logue or by email. If you keep using Logue after a change takes effect, the new terms apply. If you do not agree, you can stop using Logue.
+We may update these terms. We will post the new version here with a new date and, for significant changes, give at least 14 days' notice on Logue or by email. If you keep using Logue after a change takes effect, the new terms apply. If you do not agree, you can stop using Logue. Every change is also announced in [Logue Legal](https://logue.is/~logue-legal-updates), which you can follow or subscribe to by email.
 
 ## 13. Governing law
 
